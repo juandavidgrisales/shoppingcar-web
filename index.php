@@ -4,8 +4,8 @@
 
 	include('home.php');
 
-	echo 'SESSION:';
-	echo $login_session;
+	/*echo 'SESSION:';
+	echo $login_session;*/
 
 
 	/*$servername = "127.0.0.1";

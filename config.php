@@ -11,13 +11,4 @@
 	if ($db->connect_error) {
 		die("Connection failed: " . $db->connect_error);
 	}
-
-	/*$servername = "127.0.0.1";
-	$username = "arotexconfeccion";
-	$password = "Arotex190";
-	$dbname = "arotexco_shoppingcar";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname, 3306);*/
-		 
 ?>
