@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login | E-Shopper</title>
+    <title>Home | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -32,8 +32,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> + 57 320 273 81 51</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> ventas@arotexconfecciones.com</a></li>
+								<li><a href=""><i class="fa fa-phone"></i> +57 320 273 81 51</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> ventas@arotexconfecciones.com - NIT 14.223.251-0</a></li>
 							</ul>
 						</div>
 					</div>
@@ -52,11 +52,8 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
-								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php" class="active"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -78,30 +75,19 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+								<li><a href="index.php" class="active">Home</a></li>
+								<li class="dropdown"><a href="#">Tienda<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.php">Products</a></li>
-										<li><a href="product-details.php">Product Details</a></li> 
-										<li><a href="checkout.php">Checkout</a></li> 
-										<li><a href="cart.php">Cart</a></li> 
-										<li><a href="login.php" class="active">Login</a></li> 
-                                    </ul>
+                                        <li><a href="shop.php">Productos</a></li>
+									</ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.php">Blog List</a></li>
-										<li><a href="blog-single.php">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-								<li><a href="404.php">404</a></li>
-								<li><a href="contact-us.php">Contact</a></li>
+								<li><a href="contact-us.php">Contacto</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							
 						</div>
 					</div>
 				</div>

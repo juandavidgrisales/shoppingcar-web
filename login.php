@@ -22,7 +22,7 @@
 		if($count == 1) {
 			$_SESSION['login_user'] = $myusername;
 
-			header("location: cart.php");
+			header("location: shop.php");
 		}else {
 			$error = "Your Login Name or Password is invalid";
 		}
