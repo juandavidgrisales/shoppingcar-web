@@ -2,7 +2,7 @@
 	ob_start();
 	include('header.php');
 
-	include('home.html');
+	include('home.php');
 
 	echo 'SESSION:';
 	echo $login_session;
@@ -33,6 +33,6 @@
 	}
 	$conn->close();*/
 
-	include('footer.html');
+	include('footer.php');
 	ob_end_flush();
 ?>
