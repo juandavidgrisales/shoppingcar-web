@@ -1,7 +1,12 @@
 <?php
-	include('header.html');
+	ob_start();
+	include('header.php');
 
 	include('home.html');
+
+	echo 'SESSION:';
+	echo $login_session;
+
 
 	/*$servername = "127.0.0.1";
 	$username = "arotexconfeccion";
@@ -29,4 +34,5 @@
 	$conn->close();*/
 
 	include('footer.html');
+	ob_end_flush();
 ?>
