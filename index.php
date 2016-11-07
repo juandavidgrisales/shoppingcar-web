@@ -1,5 +1,4 @@
 <?php
-	ob_start();
 	include('header.php');
 
 	include('home.php');
@@ -34,5 +33,4 @@
 	$conn->close();*/
 
 	include('footer.php');
-	ob_end_flush();
 ?>

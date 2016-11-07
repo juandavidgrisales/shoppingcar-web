@@ -1,6 +1,4 @@
 <?php
-	ob_start();
-	session_start();
 	include("header.php");
 	include("config.php");
 
@@ -51,5 +49,4 @@
 	
 <?php
 	include('footer.php');
-	ob_end_flush();
 ?>

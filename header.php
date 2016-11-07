@@ -1,3 +1,7 @@
+<?php
+	ob_start();
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +57,13 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+								<?php
+									if (!isset($_SESSION['login_user'])){
+										echo '<li><a href="login.php"><i class="fa fa-lock"></i> Login</a>';
+									} else {
+										echo '<li><a href="logout.php"><i class="fa fa-lock"></i> Logout</a>';
+									}
+								?>
 							</ul>
 						</div>
 					</div>
