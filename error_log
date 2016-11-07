@@ -1,0 +1,8 @@
+[06-Nov-2016 20:21:59 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/2005): Unknown MySQL server host 'localhost:3306' (0) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:23:21 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/2005): Unknown MySQL server host 'www.arotexconfecciones.com:3306' (0) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:27:38 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexco_admin'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:29:09 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexco_admin'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:29:11 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexco_admin'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:35:07 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexco_admin'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:35:09 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexco_admin'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
+[06-Nov-2016 20:42:48 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'arotexconfeccion'@'192.185.73.62' (using password: YES) in /home/arotexconfeccion/tienda/index.php on line 8
