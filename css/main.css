@@ -1552,7 +1552,18 @@ h2.title {
   position: absolute;
   top: 11px;
   left:48px;
+}
 
+.breadcrumbs .breadcrumb .second-bread a:after {
+  content:"";
+  height:auto;
+  width: auto;
+  border-width: 8px;
+  border-style: solid;
+  border-color:transparent transparent transparent #FE980F;
+  position: absolute;
+  top: 11px;
+  left:121px;
 }
 
 .breadcrumbs .breadcrumb > li + li:before {
@@ -1652,13 +1663,29 @@ h2.title {
   
 }
 
+.cart_update  {
+  display: grid;
+  margin-right: -12px;
+  overflow: hidden;
+}
+
+
+.cart_update a {
+  background:#F0F0E9;
+  color: #FFFFFF;
+  padding: 5px 7px;
+  font-size: 16px
+}
+
+.cart_update a:hover {
+  background:#FE980F
+}
 
 .cart_delete  {
   display: block;
   margin-right: -12px;
   overflow: hidden;
 }
-
 
 .cart_delete a {
   background:#F0F0E9;
@@ -1780,6 +1807,7 @@ h2.title {
   border: none;
   padding: 5px 15px;
 }
+
 .update{
     margin-left: 40px;
 }
