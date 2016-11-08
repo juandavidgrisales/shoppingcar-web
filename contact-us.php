@@ -66,10 +66,13 @@
 	    				<h2 class="title text-center">Información de contacto</h2>
 	    				<address>
 	    					<p>Arotex Confecciones.</p>
-							<p>Carrera 11 No. 34A - 92 Oficina 402, Ibagué - Colombia</p>
+							<p>Carrera 11 No. 34A - 92 Oficina 402</p>
 							<p>Ibagué, Colombia</p>
 							<p>Telefono: +57 320 273 8151</p>
 							<p>Email: ventas@aerotexconfecciones.com</p>
+							<p>Horario de atención a solicitudes:</p>
+							<p>Lunes a viernes de 8:00 am a 6:00pm</p>
+							<p>Sábado de 8:00 am a 12:00 pm</p>
 	    				</address>
 	    			</div>
     			</div>    			
