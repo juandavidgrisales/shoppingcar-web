@@ -274,9 +274,11 @@
 
 									</button>
 
+
 								</span>
 
 								<p><b>Disponible:</b> En Stock</p>
+
 
 								<p><b>Talla</b></p>
 								<select class="col-sm-3" name="color">
@@ -288,6 +290,15 @@
 								    <option value="2XL">2XL</option>
 								    <option value="3XL">3XL</option>
 								 </select>
+
+								 <button href="cart.php" type="button" class="btn btn-fefault cart" >
+
+										<i class="fa fa-shopping-cart"></i>
+
+										Ver Carrito
+
+									</button>
+
 								<br></br>
 								<p><b>Color</b></p>
 								<select class="col-sm-3" name="color">
@@ -300,6 +311,7 @@
 								<!--<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>-->
 
 							</div><!--/product-information-->
+
 
 						</div>
 

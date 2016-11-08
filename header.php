@@ -36,8 +36,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +57 320 273 81 51</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> ventas@arotexconfecciones.com - NIT 14.223.251-0</a></li>
+								<li><a><i class="fa fa-phone"></i> +57 320 273 81 51 </a></li>
+								<li><a><i class="fa fa-envelope"></i> ventas@arotexconfecciones.com - NIT 14.223.251-0</a></li>
 							</ul>
 						</div>
 					</div>
