@@ -40,15 +40,15 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
-						<h2>Login to your account</h2>
+						<h2>Por favor ingrese sus credenciales</h2>
 						<form action = "" method = "post">
 							<input type="text" name="identification_number" placeholder="Cédula" />
-							<input type="password" name="password" placeholder="password" />
-							<span>
+							<input type="password" name="password" placeholder="Contraseña" />
+							<!--<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
-							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							</span>-->
+							<button type="submit" class="btn btn-default">Ingresar</button>
 						</form>
 						<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 					</div><!--/login form-->
