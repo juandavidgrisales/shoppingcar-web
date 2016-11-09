@@ -11,7 +11,7 @@
 				  <li><a href="index.php">Home</a></li>
 				  <li><a href="product-details.php">Tienda</a></li>
 				  <li><a href="cart.php">Carrito</a></li>
-				  <li class="second-bread"><a href="cart.php">Checkout</a></li>
+				  <li class="second-bread"><a href="checkout.php">Checkout</a></li>
 				  <li class="active"><b>Despacho</b></li>
 				</ol>
 			</div>
