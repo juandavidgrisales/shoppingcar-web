@@ -36,16 +36,29 @@ include('header.php');
 	}
 
 	function addToCart(cedula) {
-		if(cedula==camila["cedula"]){
-			if (sessionStorage.getItem('camila') != null) {
-			  camila = JSON.parse(sessionStorage.getItem('camila'));
+		addToCartByPerson(cedula, camila, 'camila');
+		addToCartByPerson(cedula, camilo, 'camilo');
+		addToCartByPerson(cedula, andrea, 'andrea');
+		addToCartByPerson(cedula, orlando, 'orlando');
+		addToCartByPerson(cedula, paulina, 'paulina');
+		addToCartByPerson(cedula, laura, 'laura');
+		addToCartByPerson(cedula, alex, 'alex');
+		addToCartByPerson(cedula, pablo, 'pablo');
+	}
+
+	function addToCartByPerson (cedula, person, personName){
+		if(cedula==person["cedula"]){
+
+			if (sessionStorage.getItem(personName) != null) {
+			  person = JSON.parse(sessionStorage.getItem(personName));
 			}
-			for (let i = 0; i < camila["productos"].length; i++ ) {
-				if ($("#product-description").text() == camila["productos"][i].prenda) {
-					let temp = camila["productos"][i].actual + parseInt($("#cant-prod").val());
-					if (temp <= camila["productos"][i].max) {
-						camila["productos"][i].actual = temp;
-						sessionStorage.setItem('camila', JSON.stringify(camila));
+
+			for (let i = 0; i < person["productos"].length; i++ ) {
+				if ($("#product-description").text() == person["productos"][i].prenda) {
+					let temp = person["productos"][i].actual + parseInt($("#cant-prod").val());
+					if (temp <= person["productos"][i].max) {
+						person["productos"][i].actual = temp;
+						sessionStorage.setItem(personName, JSON.stringify(person));
 
 					} else {
 						alert("Usted no puede agregar mas unidades de este producto a su carrito");
@@ -53,7 +66,6 @@ include('header.php');
 				}
 			}
 		}
-		//console.log(camila["productos"][0]);
 	}
 </script>
 
@@ -276,15 +288,12 @@ include('header.php');
 								    <option value="XL">XL</option>
 								    <option value="2XL">2XL</option>
 								    <option value="3XL">3XL</option>
-								 </select>
+								</select>
 
-								 <button href="cart.php" type="button" class="btn btn-fefault cart" >
+								<button type="button" class="btn btn-fefault cart" onclick="window.location='cart.php';">
+									<i class="fa fa-shopping-cart"></i>Ver Carrito
+								</button>
 
-										<i class="fa fa-shopping-cart"></i>
-
-										Ver Carrito
-
-									</button>
 								<br></br>
 								<p><b>Color</b></p>
 								<select class="col-sm-3" name="color">

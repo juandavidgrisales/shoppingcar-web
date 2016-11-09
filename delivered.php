@@ -3,7 +3,6 @@
 
 	session_destroy();
 ?>
-
 	<section id="delivered"><!--form-->
 		<div class="container">
 			<div class="breadcrumbs">

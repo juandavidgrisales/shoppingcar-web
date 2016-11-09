@@ -29,6 +29,19 @@
 </head><!--/head-->
 
 <body>
+	<script type="text/javascript">
+		function logout () {
+			sessionStorage.removeItem('camila');
+			sessionStorage.removeItem('camilo');
+			sessionStorage.removeItem('andrea');
+			sessionStorage.removeItem('orlando');
+			sessionStorage.removeItem('paulina');
+			sessionStorage.removeItem('laura');
+			sessionStorage.removeItem('alex');
+			sessionStorage.removeItem('pablo');
+			window.location = "logout.php";
+		}
+	</script>
 	<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
@@ -61,7 +74,7 @@
 									if (!isset($_SESSION['login_user'])){
 										echo '<li><a href="login.php"><i class="fa fa-lock"></i> Inicia sesión</a>';
 									} else {
-										echo '<li><a href="logout.php"><i class="fa fa-lock"></i> Cerrar Sesión</a>';
+										echo '<li><a href="javascript:logout();"><i class="fa fa-lock"></i> Cerrar Sesión</a>';
 									}
 								?>
 							</ul>
