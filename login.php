@@ -34,7 +34,7 @@
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
 					<li><a href="#">Home</a></li>
-					<li class="active">Login</li>
+					<li class="active"><b>Inicia sesión</b></li>
 				</ol>
 			</div>
 			<div class="row">

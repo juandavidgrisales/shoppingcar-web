@@ -6,8 +6,9 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="active">Carrito</li>
+				  <li><a href="index.php">Home</a></li>
+				  <li class="second-bread"><a href="product-details.php">Tienda</a></li>
+				  <li class="active"><b>Carrito</b></li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">

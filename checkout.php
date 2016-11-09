@@ -19,9 +19,10 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li class="second-bread"><a href="#">Carrito</a></li>
-				  <li class="active">Checkout</li>
+				  <li><a href="index.php">Home</a></li>
+				  <li><a href="product-details.php">Tienda</a></li>
+				  <li class="second-bread"><a href="cart.php">Carrito</a></li>
+				  <li class="active"><b>Checkout</b></li>
 				</ol>
 			</div><!--/breadcrums-->
 

@@ -59,9 +59,9 @@
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
 								<?php
 									if (!isset($_SESSION['login_user'])){
-										echo '<li><a href="login.php"><i class="fa fa-lock"></i> Login</a>';
+										echo '<li><a href="login.php"><i class="fa fa-lock"></i> Inicia sesión</a>';
 									} else {
-										echo '<li><a href="logout.php"><i class="fa fa-lock"></i> Logout</a>';
+										echo '<li><a href="logout.php"><i class="fa fa-lock"></i> Cerrar Sesión</a>';
 									}
 								?>
 							</ul>
@@ -86,9 +86,9 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Tienda<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">Colombia Compra Eficiente<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="product-details.php">Productos</a></li>
+                                        <li><a href="product-details.php">Tienda</a></li>
 									</ul>
                                 </li> 
 								<li><a href="contact-us.php">Contacto</a></li>
