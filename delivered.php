@@ -4,16 +4,6 @@
 	session_destroy();
 ?>
 
-	<script type="text/javascript">
-		sessionStorage.removeItem('camila');
-		sessionStorage.removeItem('camilo');
-		sessionStorage.removeItem('andrea');
-		sessionStorage.removeItem('orlando');
-		sessionStorage.removeItem('paulina');
-		sessionStorage.removeItem('laura');
-		sessionStorage.removeItem('alex');
-	</script>
-
 	<section id="delivered"><!--form-->
 		<div class="container">
 			<div class="breadcrumbs">
