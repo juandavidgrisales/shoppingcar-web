@@ -24,7 +24,7 @@
 	 	<div class="breadcrumbs">
 			<ol class="breadcrumb">
 				<li><a href="#">Home</a></li>
-				<li class="active">Contacto</li>
+				<li class="active"><b>Contacto</b></li>
 			</ol>
 		</div>
     	<div class="bg">
