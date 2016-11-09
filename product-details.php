@@ -3,270 +3,234 @@ include('session.php');
 include('header.php');
 ?>
 <script type="text/javascript">
-	$("#dama-ropa2").click(function(){
-		$("#img1").attr("src","images/product-details/sastreformal2piezas/grandes/View3.jpg");//.on("load",function(){});});
-		$("#img2").attr("src","images/product-details/sastreformal2piezas/grandes/View3.jpg");
-		$("#img3").attr("src","images/product-details/sastreformal2piezas/grandes/View3.jpg");
-		$("#img4").attr("src","images/product-details/sastreformal2piezas/grandes/View3.jpg");
-	});
+	/*$("#img1-mini").click(function(){
+	});*/
+	function imageChange (number){
+		$("#div-img1").removeClass("active");
+		$("#div-img2").removeClass("active");
+		$("#div-img3").removeClass("active");
+		$("#div-img4").removeClass("active");
+		$("#div-img"+number).addClass("active");
+	}
+
+	function changeTittle (folder) {
+		if (folder == "sastreformal2piezas") return "Sastre formal De Dos (2) Piezas";
+		if (folder == "blusaformalmangalarga") return "Blusa formal manga larga";
+		if (folder == "vestidoformalhombre") return "Vestido formal de dos (2) piezas gama alta";
+		if (folder == "camisaformalmangalarga") return "Camisa formal manga larga";
+		if (folder == "corbatas") return "Corbata";
+		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Diseño Clasico y de Moda";
+	}
+
+	function changeClothes (folder) {
+		$("#img1").attr("src","images/product-details/"+folder+"/grandes/View1.jpg");
+		$("#img2").attr("src","images/product-details/"+folder+"/grandes/View2.jpg");
+		$("#img3").attr("src","images/product-details/"+folder+"/grandes/View3.jpg");
+		$("#img4").attr("src","images/product-details/"+folder+"/grandes/View4.jpg");
+		$("#img1-mini").attr("src","images/product-details/"+folder+"/miniaturas/View1.jpg");
+		$("#img2-mini").attr("src","images/product-details/"+folder+"/miniaturas/View2.jpg");
+		$("#img3-mini").attr("src","images/product-details/"+folder+"/miniaturas/View3.jpg");
+		$("#img4-mini").attr("src","images/product-details/"+folder+"/miniaturas/View4.jpg");
+		$("#product-description").text(changeTittle(folder));
+		
+	}
+
+	function addToCart(cedula) {
+		if(cedula==camila["cedula"]){
+			if (sessionStorage.getItem('camila') != null) {
+			  camila = JSON.parse(sessionStorage.getItem('camila'));
+			}
+			for (let i = 0; i < camila["productos"].length; i++ ) {
+				if ($("#product-description").text() == camila["productos"][i].prenda) {
+					let temp = camila["productos"][i].actual + parseInt($("#cant-prod").val());
+					if (temp <= camila["productos"][i].max) {
+						camila["productos"][i].actual = temp;
+						sessionStorage.setItem('camila', JSON.stringify(camila));
+
+					} else {
+						alert("Usted no puede agregar mas unidades de este producto a su carrito");
+					}
+				}
+			}
+		}
+		//console.log(camila["productos"][0]);
+	}
 </script>
 
 
-<section>
+	<section>
 
-	<div class="container">
+		<div class="container">
 
-		<div class="breadcrumbs">
-			<ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Productos</li>
-			</ol>
-		</div>
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li class="active">Productos</li>
+				</ol>
+			</div>
 
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="left-sidebar">
-					<h2>Segmentos</h2>
-					<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-						<?php
-						if ($user_check=='38228444' || $user_check=='38228444') {
-						?>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-										Ropa Dama
-									</a>
-								</h4>
-							</div>
-							<div id="sportswear" class="panel-collapse collapse">
-								<div class="panel-body">
-									<ul>
-										<li><a id="dama-ropa1" href="#">-Sastre formal de dos (2) piezas</a></li>
-										<li><a id="dama-ropa2" href="#">-Blusa formal manga larga</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<?php
-						}
-						if ($user_check=='14225334' || $user_check=='93367444') {
-						?>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-										Ropa Caballero
-									</a>
-								</h4>
-							</div>
-							<div id="mens" class="panel-collapse collapse">
-								<div class="panel-body">
-									<ul>
-										<li><a href="#">-Vestido formal de dos (2) piezas gama alta</a></li>
-										<li><a href="#">-Camisa formal manga larga</a></li>
-										<li><a href="#">-Corbata</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<?php
-						}
-						if ($user_check=='38228444' || $user_check=='38555333') {
-						?>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="#womens">
-										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-										Calzado Dama
-									</a>
-								</h4>
-							</div>
-							<div id="womens" class="panel-collapse collapse">
-								<div class="panel-body">
-									<ul>
-										<li><a href="#">-Diseño Clasico y de Moda</a></li>
-										<li><a href="#">-Diseño Deportivo</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<?php
-						}
-						if ($user_check=='14225334' || $user_check=='93367444') {
-						?>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="#womens2">
-										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-										Calzado Caballero
-									</a>
-								</h4>
-							</div>
-							<div id="womens2" class="panel-collapse collapse">
-								<div class="panel-body">
-									<ul>
-										<li><a href="#">-Diseño Clasico y de Moda</a></li>
-										<li><a href="#">-Diseño Deportivo</a></li>
-										<li><a href="#">-Cinturon</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<?php
-						}
-						?>
-					</div><!--/category-products-->
+			<div class="row">
 
-					<div class="brands_products"><!--brands_products-->
-								<!--<h2>Brands</h2>
-								<div class="brands-name">
-									<ul class="nav nav-pills nav-stacked">
-										<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-										<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-										<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-										<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-										<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-										<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-										<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
-									</ul>
-								</div>-->
-							</div><!--/brands_products-->
+				<div class="col-sm-3">
+					<div class="left-sidebar">
 
-
-
-							<div class="price-range"><!--price-range-->
-								<!--<h2>Price Range</h2>
-								<div class="well text-center">
-									 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-									 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-									</div>-->
-								</div><!--/price-range-->
-
-
-
-								<div class="shipping text-center"><!--shipping-->
-									<!--<img src="images/home/shipping.jpg" alt="" />-->
-								</div><!--/shipping-->
-
-
-
-							</div>
-
-						</div>
-
-
-
-						<div class="col-sm-9 padding-right">
-
-							<div class="product-details"><!--product-details-->
-
-								<div class="col-sm-5">
-									<div id="similar-product" class="carousel slide" data-ride="carousel">
-
-										<div class="carousel-inner">
-											<div  id="img1" class="item active">
-												<img src="images/product-details/sastreformal2piezas/grandes/View3.jpg" alt="" />
-											</div>
-
-											<div id="img2" class="item">
-												<img src="images/product-details/sastreformal2piezas/grandes/View2.jpg" alt="" />
-											</div>
-
-											<div id="img3" class="item">
-												<img src="images/product-details/sastreformal2piezas/grandes/View1.jpg" alt="" />
-											</div>
-
-											<div id="img4" class="item">
-												<img src="images/product-details/sastreformal2piezas/grandes/View4.jpg" alt="" />
-											</div>
-										</div>
-
-										<!-- Controls -->
-
-										<a class="left item-control" href="#similar-product" data-slide="prev">
-
-											<i class="fa fa-angle-left"></i>
-
+						<h2>Segmentos</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<?php
+							if ($user_check=='38228444' || $user_check=='38555333') {
+							?>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Ropa Dama
 										</a>
-
-										<a class="right item-control" href="#similar-product" data-slide="next">
-
-											<i class="fa fa-angle-right"></i>
-
+									</h4>
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a id="dama-ropa1" href="javascript:changeClothes('sastreformal2piezas');">-Sastre formal de dos (2) piezas</a></li>
+											<li><a id="dama-ropa2" href="javascript:changeClothes('blusaformalmangalarga');">-Blusa formal manga larga</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<?php
+							}
+							if ($user_check=='14225334' || $user_check=='93367444') {
+							?>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Ropa Caballero
 										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="javascript:changeClothes('vestidoformalhombre');">-Vestido formal de dos (2) piezas gama alta</a></li>
+											<li><a href="javascript:changeClothes('camisaformalmangalarga');">-Camisa formal manga larga</a></li>
+											<li><a href="javascript:changeClothes('corbatas');">-Corbata</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<?php
+							}
+							if ($user_check=='38665333' || $user_check=='38555333') {
+							?>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Calzado Dama
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="javascript:changeClothes('disenoclasicomujer');">-Diseño Clasico y de Moda</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<?php
+							}
+							if ($user_check=='14256834' || $user_check=='95367342') {
+							?>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens2">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Calzado Caballero
+										</a>
+									</h4>
+								</div>
+								<div id="womens2" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="javascript:changeClothes('disenoclasicohombre');">-Diseño Clasico y de Moda</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<?php
+							}
+							?>
+						</div><!--/category-products-->
+
+					</div>
+				</div>
+
+
+				<div class="col-sm-9 padding-right">
+
+					<div class="product-details"><!--product-details-->
+
+						<div class="col-sm-5">
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+
+								<div class="carousel-inner">
+									<div id="div-img1" class="item active">
+										<img id="img1" src="images/product-details/sastreformal2piezas/grandes/View1.jpg" alt="" />
 									</div>
 
-									<div id="similar-product" data-ride="carousel">
-
-										<!-- Wrapper for slides -->
-
-										<div class="carousel-inner">
-
-											<div class="item active">
-
-												<a><img id="img1-mini" src="images/product-details/sastreformal2piezas/miniaturas/View3.jpg" alt=""></a>
-
-												<a><img id="img2-mini" src="images/product-details/sastreformal2piezas/miniaturas/View2.jpg" alt=""></a>
-
-												<a><img id="img3-mini" src="images/product-details/sastreformal2piezas/miniaturas/View1.jpg" alt=""></a>
-
-												<a><img id="img4-mini" src="images/product-details/sastreformal2piezas/miniaturas/View4.jpg" alt=""></a>
-
-											</div>
-
-										<!--<div class="item">
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View3.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View2.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View1.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View4.jpg" alt=""></a>
-
-										</div>
-
-										<div class="item">
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View3.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View2.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View1.jpg" alt=""></a>
-
-										  <a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View4.jpg" alt=""></a>
-
-										</div>-->
-
-										
-
+									<div id="div-img2" class="item">
+										<img id="img2" src="images/product-details/sastreformal2piezas/grandes/View2.jpg" alt="" />
 									</div>
 
+									<div id="div-img3" class="item">
+										<img id="img3" src="images/product-details/sastreformal2piezas/grandes/View2.jpg" alt="" />
+									</div>
 
+									<div id="div-img4" class="item">
+										<img id="img4" src="images/product-details/sastreformal2piezas/grandes/View4.jpg" alt="" />
+									</div>
+								</div>
 
-									<!-- Controls -->
+								<!-- Controls -->
 
-								  <!--<a class="left item-control" href="#similar-product" data-slide="prev">
+								<a class="left item-control" href="#similar-product" data-slide="prev">
 
 									<i class="fa fa-angle-left"></i>
 
-								  </a>
+								</a>
 
-								  <a class="right item-control" href="#similar-product" data-slide="next">
+								<a class="right item-control" href="#similar-product" data-slide="next">
 
 									<i class="fa fa-angle-right"></i>
 
-								</a>-->
-
+								</a>
 							</div>
 
+							<div id="similar-product" data-ride="carousel">
 
+								<!-- Wrapper for slides -->
 
+								<div class="carousel-inner">
+
+									<div class="item active">
+
+										<a href="javascript:imageChange(1);"><img id="img1-mini" src="images/product-details/sastreformal2piezas/miniaturas/View1.jpg" alt=""></a>
+
+										<a href="javascript:imageChange(2);"><img id="img2-mini" src="images/product-details/sastreformal2piezas/miniaturas/View2.jpg" alt=""></a>
+
+										<a href="javascript:imageChange(3);"><img id="img3-mini" src="images/product-details/sastreformal2piezas/miniaturas/View3.jpg" alt=""></a>
+
+										<a href="javascript:imageChange(4);"><img id="img4-mini" src="images/product-details/sastreformal2piezas/miniaturas/View4.jpg" alt=""></a>
+
+									</div>
+								</div>
+
+							</div>
 						</div>
 
 						<div class="col-sm-7">
@@ -275,7 +239,7 @@ include('header.php');
 
 								<!--<img src="images/product-details/new.jpg" class="newarrival" alt="" />-->
 
-								<h2>Sastre Formal De Dos (2) Piezas</h2>
+								<h2 id="product-description">Sastre formal De Dos (2) Piezas</h2>
 
 								<p>Web ID: 1089772</p>
 
@@ -287,9 +251,9 @@ include('header.php');
 
 									<label>Cantidad:</label>
 
-									<input type="text" value="1" />
+									<input id="cant-prod" type="text" value="1" />
 
-									<button type="button" class="btn btn-fefault cart">
+									<button type="button" class="btn btn-fefault cart" onclick="addToCart(<?php echo $user_check;?>);">
 
 										<i class="fa fa-shopping-cart"></i>
 
@@ -330,8 +294,6 @@ include('header.php');
 									<option value="Azul">Azul</option>
 								</select>
 
-								<!--<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>-->
-
 							</div><!--/product-information-->
 
 
@@ -339,7 +301,7 @@ include('header.php');
 
 					</div><!--/product-details-->
 
-					
+						
 
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 
@@ -729,6 +691,6 @@ include('header.php');
 
 	</section>
 
-	<?php
-	include('footer.php');
-	?>	
+<?php
+include('footer.php');
+?>	
