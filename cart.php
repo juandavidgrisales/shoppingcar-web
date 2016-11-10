@@ -3,46 +3,49 @@
 	include('header.php');
 ?>
 	<script type="text/javascript">
+		
+		var names = ['camila', 'camilo', 'andrea', 'orlando', 'paulina', 'pablo', 'laura', 'alex'];
+
+		$(window).load(function() {
+	      showCart();
+		});
+
 		function showCart() {
-			let names = ['camila', 'camilo'];
 			for (let i = 0; i < names.length ; i++) {
 				showProducts(<?php echo $user_check;?>, names[i]);
 			}
-			
-			
 		}
 
-		function showProducts (cedula, personName) {
+		function quitar() {
+			for (let i = 0; i < names.length ; i++) {
+				removeProduct(<?php echo $user_check;?>, names[i]);
+			}
+		}
+
+		function removeProduct(cedula, personName) {
 			if (sessionStorage.getItem(personName) != null) {
 				let person = JSON.parse(sessionStorage.getItem(personName));
 				console.log(person);
 				if(cedula==person["cedula"]){
 					for (let i = 0; i < person["productos"].length; i++ ) {
-						console.log(person["productos"][i].prenda);
-						console.log(person["productos"][i].actual);
-						console.log(person["productos"][i].max);
-						console.log('actualizo2')
-						$('#product-table tbody').append('<tr> <td>HOLA HOLA HOLA </td></tr>');
-						/*$('#product-table').append(
-							'<tr>'+
-								'<td class="cart_product">'+
-									'<a href=""><img src="images/cart/one.png" alt=""></a>'+
-								'</td>'+
-								'<td class="cart_description">'+
-									'<h4><a href="">Colorblock Scuba</a></h4>'+
-									'<p>Web ID: 1089772</p>'+
-								'</td>'+
-								'<td class="cart_total">'+
-									'<p class="cart_total_price">1</p>'+
-								'</td>'+
-								'<td class="cart_update">'+
-									'<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>'+
-								'</td>'+
-								'<td class="cart_delete">'+
-									'<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>'+
-								'</td>'+
-							'</tr>'
-						);*/
+						if (person["productos"][i].actual > 0) {
+							person["productos"][i].actual -= 1;
+							sessionStorage.setItem(personName, JSON.stringify(person));
+						}
+						if (person["productos"][i].actual == 0)
+							$("#"+getImageURL(person["productos"][i].prenda, cedula)).hide();
+					}
+				}
+			}
+		}
+
+		function showProducts (cedula, personName) {
+			if (sessionStorage.getItem(personName) != null) {
+				let person = JSON.parse(sessionStorage.getItem(personName));
+				if(cedula==person["cedula"]){
+					for (let i = 0; i < person["productos"].length; i++ ) {
+						if (person["productos"][i].actual > 0)
+							$("#"+getImageURL(person["productos"][i].prenda, cedula)).removeAttr( "hidden" );
 					}
 				}
 			}
@@ -68,7 +71,7 @@
 							cedula == "95367342") ) 
 				return "disenoclasicohombre";
 		}
-		showCart();
+		
 	</script>
 
 	<section id="cart_items">
@@ -92,64 +95,132 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php
-						for (int i  = 0 ;;i++){
-
-						}
-					?>
-						<tr>
+						<tr id="sastreformal2piezas" hidden>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
+								<a href=""><img src="images/product-details/sastreformal2piezas/miniaturas/View1.jpg" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
+								<h4><a href="">Sastre formal De Dos (2) Piezas</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">1</p>
 							</td>
 							<td class="cart_update">
-								<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="blusaformalmangalarga" hidden>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
+								<a href=""><img src="images/product-details/blusaformalmangalarga/miniaturas/View1.jpg" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
+								<h4><a href="">Blusa formal manga larga</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">1</p>
 							</td>
 							<td class="cart_update">
-								<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-						<tr>
+						<tr id="vestidoformalhombre" hidden>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
+								<a href=""><img src="images/product-details/vestidoformalhombre/miniaturas/View1.jpg" alt=""></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
+								<h4><a href="">Vestido formal de dos (2) piezas gama alta</a></h4>
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">1</p>
 							</td>
 							<td class="cart_update">
-								<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+						<tr id="camisaformalmangalarga" hidden>
+							<td class="cart_product">
+								<a href=""><img src="images/product-details/camisaformalmangalarga/miniaturas/View1.jpg" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Camisa formal manga larga</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">1</p>
+							</td>
+							<td class="cart_update">
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+
+						<tr id="corbatas" hidden>
+							<td class="cart_product">
+								<a href=""><img src="images/product-details/corbatas/miniaturas/View1.jpg" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Corbata</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">1</p>
+							</td>
+							<td class="cart_update">
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+						<tr id="disenoclasicohombre" hidden>
+							<td class="cart_product">
+								<a href=""><img src="images/product-details/disenoclasicohombre/miniaturas/View1.jpg" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Diseño Clasico y de Moda</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">1</p>
+							</td>
+							<td class="cart_update">
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+						<tr id="disenoclasicomujer" hidden>
+							<td class="cart_product">
+								<a href=""><img src="images/product-details/disenoclasicomujer/miniaturas/View1.jpg" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Diseño Clasico y de Moda</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">1</p>
+							</td>
+							<td class="cart_update">
+								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 					</tbody>
