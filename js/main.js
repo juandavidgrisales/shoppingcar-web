@@ -34,49 +34,6 @@ var alex = { "cedula": "95367342",
 			 "productos" : [new Articulo("Diseño Clasico y de Moda", 1, 0)]};
 
 
-
-
-function imageChange (number){
-	$("#div-img1").removeClass("active");
-	$("#div-img2").removeClass("active");
-	$("#div-img3").removeClass("active");
-	$("#div-img4").removeClass("active");
-	$("#div-img"+number).addClass("active");
-}
-
-function addToCart(cedula) {
-	addToCartByPerson(cedula, camila, 'camila');
-	addToCartByPerson(cedula, camilo, 'camilo');
-	addToCartByPerson(cedula, andrea, 'andrea');
-	addToCartByPerson(cedula, orlando, 'orlando');
-	addToCartByPerson(cedula, paulina, 'paulina');
-	addToCartByPerson(cedula, laura, 'laura');
-	addToCartByPerson(cedula, alex, 'alex');
-	addToCartByPerson(cedula, pablo, 'pablo');
-}
-
-function addToCartByPerson (cedula, person, personName){
-	if(cedula==person["cedula"]){
-
-		if (sessionStorage.getItem(personName) != null) {
-		  person = JSON.parse(sessionStorage.getItem(personName));
-		}
-
-		for (let i = 0; i < person["productos"].length; i++ ) {
-			if ($("#product-description").text() == person["productos"][i].prenda) {
-				let temp = person["productos"][i].actual + parseInt($("#cant-prod").val());
-				if (temp <= person["productos"][i].max) {
-					person["productos"][i].actual = temp;
-					sessionStorage.setItem(personName, JSON.stringify(person));
-
-				} else {
-					alert("Usted no puede agregar mas unidades de este producto a su carrito");
-				}
-			}
-		}
-	}
-}
-
 $('#sl2').slider();
 
 var RGBChange = function() {
