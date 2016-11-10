@@ -5,12 +5,19 @@ include('header.php');
 <script type="text/javascript">
 	/*$("#img1-mini").click(function(){
 	});*/
-	function imageChange (number){
-		$("#div-img1").removeClass("active");
-		$("#div-img2").removeClass("active");
-		$("#div-img3").removeClass("active");
-		$("#div-img4").removeClass("active");
-		$("#div-img"+number).addClass("active");
+	
+	initLoad(<?php echo $user_check;?>);
+
+	function initLoad (cedula) {
+		if (cedula == "38228444" || cedula == "38555333") {
+			changeClothes("sastreformal2piezas");
+		} else if (cedula == "38228555" || cedula == "38665333") {
+			changeClothes("disenoclasicomujer");
+		} else if (cedula == "14225334" || cedula == "93367444") {
+			changeClothes("vestidoformalhombre");
+		} else if (cedula == "14256834" || cedula == "95367342") {
+			changeClothes("disenoclasicohombre");
+		}
 	}
 
 	function changeTittle (folder) {
@@ -33,39 +40,6 @@ include('header.php');
 		$("#img4-mini").attr("src","images/product-details/"+folder+"/miniaturas/View4.jpg");
 		$("#product-description").text(changeTittle(folder));
 		
-	}
-
-	function addToCart(cedula) {
-		addToCartByPerson(cedula, camila, 'camila');
-		addToCartByPerson(cedula, camilo, 'camilo');
-		addToCartByPerson(cedula, andrea, 'andrea');
-		addToCartByPerson(cedula, orlando, 'orlando');
-		addToCartByPerson(cedula, paulina, 'paulina');
-		addToCartByPerson(cedula, laura, 'laura');
-		addToCartByPerson(cedula, alex, 'alex');
-		addToCartByPerson(cedula, pablo, 'pablo');
-	}
-
-	function addToCartByPerson (cedula, person, personName){
-		if(cedula==person["cedula"]){
-
-			if (sessionStorage.getItem(personName) != null) {
-			  person = JSON.parse(sessionStorage.getItem(personName));
-			}
-
-			for (let i = 0; i < person["productos"].length; i++ ) {
-				if ($("#product-description").text() == person["productos"][i].prenda) {
-					let temp = person["productos"][i].actual + parseInt($("#cant-prod").val());
-					if (temp <= person["productos"][i].max) {
-						person["productos"][i].actual = temp;
-						sessionStorage.setItem(personName, JSON.stringify(person));
-
-					} else {
-						alert("Usted no puede agregar mas unidades de este producto a su carrito");
-					}
-				}
-			}
-		}
 	}
 </script>
 
