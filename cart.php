@@ -92,6 +92,11 @@
 						</tr>
 					</thead>
 					<tbody>
+					<?php
+						for (int i  = 0 ;;i++){
+
+						}
+					?>
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="images/cart/one.png" alt=""></a>
