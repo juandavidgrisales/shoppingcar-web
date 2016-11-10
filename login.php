@@ -8,19 +8,23 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['identification_number']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
 
-		$sql = "SELECT id, payoff FROM shopping_user WHERE identification_number = '$myusername' and password = '$mypassword'";
+		$sql = "SELECT id, payoff, Role_id FROM shopping_user WHERE identification_number = '$myusername' and password = '$mypassword'";
 		$result = mysqli_query($db,$sql);
 		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 		$payoff = $row['payoff'];
+		$role = $row['Role_id'];
 
 		$count = mysqli_num_rows($result);
 
 	      // If result matched $myusername and $mypassword, table row must be 1 row
 
 		if($count == 1) {
-			if ($payoff != '1'){
+			if ($payoff != '1') {
 				$_SESSION['login_user'] = $myusername;
-				header("location: product-details.php");
+				if ($role == '2') 
+					header("location: product-details.php");
+				else 
+					header("location: supervisor.php");
 			} else {
 				header("location: delivered-warning.php");
 			}

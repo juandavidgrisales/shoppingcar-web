@@ -1,6 +1,9 @@
 <?php
 	ob_start();
 	session_start();
+	if(isset($_SESSION['Role_id'])){
+      $role_id = $_SESSION['Role_id'];
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +74,13 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
+								<?php
+								if ($role_id != "1") {
+								?>
 								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Carrito</a></li>
+								<?php
+								}
+								?>
 								<?php
 									if (!isset($_SESSION['login_user'])){
 										echo '<li><a href="login.php"><i class="fa fa-lock"></i> Inicia sesión</a>';
@@ -101,11 +110,21 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php" class="active">Home</a></li>
+								<?php
+								if ($role_id != "1") {
+								?>
 								<li class="dropdown"><a href="#">Colombia Compra Eficiente<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="product-details.php">Tienda</a></li>
 									</ul>
                                 </li>
+                                <?php
+                            	} else {
+                                ?>
+                                <li><a href="supervisor.php">Supervisión</a></li>
+                                <?php
+                            	}
+                            	?>
 								<li><a href="guia-uso.php">Guia uso</a></li>
 								<li><a href="politica-devolucion.php">Politica devolución</a></li>		
 								<li><a href="mapa-virtual.php">Mapa virtual</a></li>

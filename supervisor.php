@@ -1,7 +1,32 @@
 <?php
 	include('session.php');
 	include('header.php');
+
+	$sql = "SELECT identification_number FROM shopping_user WHERE Role_id = '2' and payoff = '1'";
+	$result = mysqli_query($db,$sql);
+
+	$cedulas = array();
+	while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+		$cedulas[] = $row['identification_number'];
+	}
 ?>
+
+	<script type="text/javascript">
+		
+		var names = ['camila', 'camilo', 'andrea', 'orlando', 'paulina', 'pablo', 'laura', 'alex'];
+		var cedulas = <?php echo json_encode($cedulas); ?>;
+
+		$(window).load(function() {
+	      	mostrarRedimidos();
+		});
+
+		function mostrarRedimidos() {
+			for (let i = 0; i < cedulas.length ; i++) {
+				$('#'+cedulas[i]).removeAttr( "hidden" );
+			}
+		}
+	</script>
+
 	<section id="cart_items">
 		<div class="container">
 			<div>
@@ -23,7 +48,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr id="38228444" hidden >
 							<td class="cart_product">
 								<h4>Camila</h4>
 							</td>
@@ -41,7 +66,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="14225334" hidden >
 							<td class="cart_product">
 								<h4>Camilo</h4>
 							</td>
@@ -59,7 +84,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="38555333" hidden >
 							<td class="cart_product">
 								<h4>Paulina</h4>
 							</td>
@@ -77,7 +102,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="93367444" hidden >
 							<td class="cart_product">
 								<h4>Pablo</h4>
 							</td>
@@ -95,7 +120,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="38228555" hidden >
 							<td class="cart_product">
 								<h4>Andrea</h4>
 							</td>
@@ -113,7 +138,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="14256834" hidden >
 							<td class="cart_product">
 								<h4>Orlando</h4>
 							</td>
@@ -131,7 +156,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="38665333" hidden >
 							<td class="cart_product">
 								<h4>Laura</h4>
 							</td>
@@ -149,7 +174,7 @@
 							</td>
 						</tr>
 
-						<tr>
+						<tr id="95367342" hidden >
 							<td class="cart_product">
 								<h4>Alex</h4>
 							</td>
@@ -166,43 +191,6 @@
 								<p>NO</p>
 							</td>
 						</tr>
-
-						<!--<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/two.png" alt=""></a>
-							</td>
-							<td class="cart_description">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">1</p>
-							</td>
-							<td class="cart_update">
-								<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>
-						<tr>
-							<td class="cart_product">
-								<a href=""><img src="images/cart/three.png" alt=""></a>
-							</td>
-							<td class="cart_quantity">
-								<h4><a href="">Colorblock Scuba</a></h4>
-								<p>Web ID: 1089772</p>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">1</p>
-							</td>
-							<td class="cart_update">
-								<a class="cart_quantity_update" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-							</td>
-							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
-						</tr>-->
 					</tbody>
 				</table>
 			</div>

@@ -33,6 +33,16 @@ include('header.php');
 		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Diseño Clasico y de Moda";
 	}
 
+	function changeDescription (folder) {
+		if (folder == "sastreformal2piezas") return "Jeffsito1";
+		if (folder == "blusaformalmangalarga") return "Jeffsito2";
+		if (folder == "vestidoformalhombre") return "Jeffsito3";
+		if (folder == "camisaformalmangalarga") return "Jeffsito4";
+		if (folder == "corbatas") return "Jeffsito5";
+		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Jeffsito6";
+		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Jeffsito7";
+	}
+
 	function changeClothes (folder) {
 		$("#img1").attr("src","images/product-details/"+folder+"/grandes/View1.jpg");
 		$("#img2").attr("src","images/product-details/"+folder+"/grandes/View2.jpg");
@@ -43,8 +53,8 @@ include('header.php');
 		$("#img3-mini").attr("src","images/product-details/"+folder+"/miniaturas/View3.jpg");
 		$("#img4-mini").attr("src","images/product-details/"+folder+"/miniaturas/View4.jpg");
 		console.log("images/product-details/"+folder+"/grandes/View1.jpg");
-		$("#product-description").text(changeTittle(folder));
-		
+		$("#product-tittle").text(changeTittle(folder));
+		$(".product-description").text(changeDescription(folder));
 	}
 
 	function imageChange (number){
@@ -74,7 +84,7 @@ include('header.php');
 			}
 
 			for (let i = 0; i < person["productos"].length; i++ ) {
-				if ($("#product-description").text() == person["productos"][i].prenda) {
+				if ($("#product-tittle").text() == person["productos"][i].prenda) {
 					let temp = person["productos"][i].actual + parseInt($("#cant-prod").val());
 					if (temp <= person["productos"][i].max) {
 						person["productos"][i].actual = temp;
@@ -269,13 +279,9 @@ include('header.php');
 
 							<div class="product-information"><!--/product-information-->
 
-								<!--<img src="images/product-details/new.jpg" class="newarrival" alt="" />-->
-
-								<h2 id="product-description">Sastre formal De Dos (2) Piezas</h2>
+								<h2 id="product-tittle">Sastre formal De Dos (2) Piezas</h2>
 
 								<p>Web ID: 1089772</p>
-
-								<!--<img src="images/product-details/rating.png" alt="" />-->
 
 								<span>
 
@@ -337,330 +343,19 @@ include('header.php');
 						<div class="col-sm-12">
 
 							<ul class="nav nav-tabs">
-
-								<!--<li><a href="#details" data-toggle="tab">Details</a></li>
-
-								<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
-
-								<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
 								<li class="active"><a href="#reviews" data-toggle="tab">Descripcion</a></li>
 								<li><a href="#details" data-toggle="tab">Guia Tallas</a></li>
-
 							</ul>
 
 						</div>
 
 						<div class="tab-content">
 
-							<!--<div class="tab-pane fade" id="details" >
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery1.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery2.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery3.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery4.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							
-
-							<div class="tab-pane fade" id="companyprofile" >
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery1.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery3.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery2.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery4.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							
-
-							<div class="tab-pane fade" id="tag" >
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery1.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery2.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery3.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="col-sm-3">
-
-									<div class="product-image-wrapper">
-
-										<div class="single-products">
-
-											<div class="productinfo text-center">
-
-												<img src="images/home/gallery4.jpg" alt="" />
-
-												<h2>$56</h2>
-
-												<p>Easy Polo Black Edition</p>
-
-												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>-->
-
-							
-
 							<div class="tab-pane fade active in" id="reviews" >
 
 								<div class="col-sm-12">
+
+									<p class="product-description">Esto es una descripcion</p>
 
 									<ul>
 
@@ -672,35 +367,9 @@ include('header.php');
 
 									</ul>
 
-									<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-									<!--<p><b>Write Your Review</b></p>-->
-
 									<img src="images/product-details/tallas1.jpg" alt="" />
 
 									<img src="images/product-details/tallas2.jpg" alt="" />
-
-									<!--<form action="#">
-
-										<span>
-
-											<input type="text" placeholder="Your Name"/>
-
-											<input type="email" placeholder="Email Address"/>
-
-										</span>
-
-										<textarea name="" ></textarea>
-
-										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
-
-										<button type="button" class="btn btn-default pull-right">
-
-											Submit
-
-										</button>
-
-									</form>-->
 
 								</div>
 
@@ -709,35 +378,7 @@ include('header.php');
 
 								<div class="col-sm-12">
 
-									<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-									<!--<p><b>Write Your Review</b></p>-->
-
-									<!--<img src="images/product-details/tallas1.jpg" alt="" />-->
-
 									<img src="images/product-details/tallas2.jpg" alt="" />
-
-									<!--<form action="#">
-
-										<span>
-
-											<input type="text" placeholder="Your Name"/>
-
-											<input type="email" placeholder="Email Address"/>
-
-										</span>
-
-										<textarea name="" ></textarea>
-
-										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
-
-										<button type="button" class="btn btn-default pull-right">
-
-											Submit
-
-										</button>
-
-									</form>-->
 
 								</div>
 
