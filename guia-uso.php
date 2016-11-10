@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	include('header.php');
 ?>
 	<section id="guia-uso"><!--form-->
