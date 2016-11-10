@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+	<meta charset="charset=ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -104,7 +105,10 @@
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="product-details.php">Tienda</a></li>
 									</ul>
-                                </li> 
+                                </li>
+								<li><a href="guia-uso.php">Guia uso</a></li>
+								<li><a href="politica-devolucion.php">Politica devolución</a></li>		
+								<li><a href="mapa-virtual.php">Mapa virtual</a></li>
 								<li><a href="contact-us.php">Contacto</a></li>
 							</ul>
 						</div>

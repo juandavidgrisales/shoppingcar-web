@@ -323,8 +323,8 @@ include('header.php');
 								<li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
 
 								<li><a href="#tag" data-toggle="tab">Tag</a></li>-->
-
-								<li class="active"><a href="#reviews" data-toggle="tab">Detalles</a></li>
+								<li class="active"><a href="#reviews" data-toggle="tab">Descripcion</a></li>
+								<li><a href="#details" data-toggle="tab">Guia Tallas</a></li>
 
 							</ul>
 
@@ -685,7 +685,43 @@ include('header.php');
 								</div>
 
 							</div>
+							<div class="tab-pane fade active in" id="details" >
 
+								<div class="col-sm-12">
+
+									<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+									<!--<p><b>Write Your Review</b></p>-->
+
+									<!--<img src="images/product-details/tallas1.jpg" alt="" />-->
+
+									<img src="images/product-details/tallas2.jpg" alt="" />
+
+									<!--<form action="#">
+
+										<span>
+
+											<input type="text" placeholder="Your Name"/>
+
+											<input type="email" placeholder="Email Address"/>
+
+										</span>
+
+										<textarea name="" ></textarea>
+
+										<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
+
+										<button type="button" class="btn btn-default pull-right">
+
+											Submit
+
+										</button>
+
+									</form>-->
+
+								</div>
+
+							</div>
 							
 
 						</div>
