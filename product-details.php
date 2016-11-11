@@ -34,12 +34,12 @@ include('header.php');
 	}
 
 	function changeDescription (folder) {
-		if (folder == "sastreformal2piezas") return "Jeffsito1";
-		if (folder == "blusaformalmangalarga") return "Jeffsito2";
-		if (folder == "vestidoformalhombre") return "Jeffsito3";
-		if (folder == "camisaformalmangalarga") return "Jeffsito4";
+		if (folder == "sastreformal2piezas") return sastreformal2piezasdesp;
+		if (folder == "blusaformalmangalarga") return blusaformalmangalargadesp;
+		if (folder == "vestidoformalhombre") return vestidoformalhombredesp;
+		if (folder == "camisaformalmangalarga") return camisaformalmangalargadesp;
 		if (folder == "corbatas") return "Jeffsito5";
-		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Jeffsito6";
+		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "";
 		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Jeffsito7";
 	}
 
@@ -54,7 +54,11 @@ include('header.php');
 		$("#img4-mini").attr("src","images/product-details/"+folder+"/miniaturas/View4.jpg");
 		console.log("images/product-details/"+folder+"/grandes/View1.jpg");
 		$("#product-tittle").text(changeTittle(folder));
-		$(".product-description").text(changeDescription(folder));
+		$("#product-description").attr("src","images/product-details/"+folder+"/grandes/Descripcion.jpg");
+		$("#guide-size1").attr("src","images/product-details/"+folder+"/grandes/talla1.jpg");
+		$("#guide-size2").attr("src","images/product-details/"+folder+"/grandes/talla2.jpg");
+		$("#guide-size3").attr("src","images/product-details/"+folder+"/grandes/talla3.jpg");
+		$("#guide-size4").attr("src","images/product-details/"+folder+"/grandes/talla4.jpg");
 	}
 
 	function imageChange (number){
@@ -230,7 +234,7 @@ include('header.php');
 									</div>
 
 									<div id="div-img3" class="item">
-										<img id="img3" src="images/product-details/sastreformal2piezas/grandes/View2.jpg" alt="" />
+										<img id="img3" src="images/product-details/sastreformal2piezas/grandes/View3.jpg" alt="" />
 									</div>
 
 									<div id="div-img4" class="item">
@@ -355,8 +359,6 @@ include('header.php');
 
 								<div class="col-sm-12">
 
-									<p class="product-description">Esto es una descripcion</p>
-
 									<ul>
 
 										<li><i class="fa fa-user"></i>Arotex Confecciones</a></li>
@@ -367,18 +369,20 @@ include('header.php');
 
 									</ul>
 
-									<img src="images/product-details/tallas1.jpg" alt="" />
-
-									<img src="images/product-details/tallas2.jpg" alt="" />
+									<img id="product-description" src="" alt="" />
 
 								</div>
 
 							</div>
-							<div class="tab-pane fade active in" id="details" >
+
+							<div class="tab-pane fade" id="details" >
 
 								<div class="col-sm-12">
 
-									<img src="images/product-details/tallas2.jpg" alt="" />
+									<img id="guide-size1" src="" alt="" />
+									<img id="guide-size2" src="" alt="" />
+									<img id="guide-size3" src="" alt="" />
+									<img id="guide-size4" src="" alt="" />
 
 								</div>
 
