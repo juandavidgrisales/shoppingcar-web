@@ -15,12 +15,24 @@ include('header.php');
 	function initLoad (cedula) {
 		if (cedula == "38228444" || cedula == "38555333") {
 			changeClothes("sastreformal2piezas");
+			setTallas(true);
 		} else if (cedula == "38228555" || cedula == "38665333") {
 			changeClothes("disenoclasicomujer");
+			setTallas(false);
 		} else if (cedula == "14225334" || cedula == "93367444") {
 			changeClothes("vestidoformalhombre");
+			setTallas(true);
 		} else if (cedula == "14256834" || cedula == "95367342") {
 			changeClothes("disenoclasicohombre");
+			setTallas(false);
+		}
+	}
+
+	function setTallas (ropa) {
+		if (ropa) {
+			$("#tallas-ropa").removeAttr("hidden");
+		} else {
+			$("#tallas-zapato").removeAttr("hidden");
 		}
 	}
 
@@ -69,7 +81,7 @@ include('header.php');
 		addToCartByPerson(cedula, alex, 'alex');
 		addToCartByPerson(cedula, pablo, 'pablo');
 	}
-
+	
 	function addToCartByPerson (cedula, person, personName){
 		if(cedula==person["cedula"]){
 
@@ -298,9 +310,8 @@ include('header.php');
 
 								<p><b>Disponible:</b> En Stock</p>
 
-
 								<p><b>Talla</b></p>
-								<select class="col-sm-3" name="color">
+								<select id="tallas-ropa" class="col-sm-3" name="color" hidden>
 								    <option value="S">XS</option>
 								    <option value="S">S</option>
 								    <option value="M">M</option>
@@ -308,6 +319,25 @@ include('header.php');
 								    <option value="XL">XL</option>
 								    <option value="2XL">2XL</option>
 								    <option value="3XL">3XL</option>
+								</select>
+
+								<select id="tallas-zapato" class="col-sm-3" name="color" hidden>
+								    <option value="S">34</option>
+								    <option value="S">34.5</option>
+								    <option value="M">35</option>
+								    <option value="L">36</option>
+								    <option value="XL">36.5</option>
+								    <option value="2XL">37</option>
+								    <option value="3XL">37.5</option>
+								    <option value="S">38</option>
+								    <option value="M">39</option>
+								    <option value="XL">39.5</option>
+								    <option value="2XL">40</option>
+								    <option value="3XL">41</option>
+								    <option value="S">41.5</option>
+								    <option value="M">42</option>
+								    <option value="L">43</option>
+								    <option value="L">43.5</option>
 								</select>
 
 								<button type="button" class="btn btn-fefault cart" onclick="window.location='cart.php';">
