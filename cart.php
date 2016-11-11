@@ -71,6 +71,32 @@
 							cedula == "95367342") ) 
 				return "disenoclasicohombre";
 		}
+
+		function checkout () {
+			let person = getPerson(<?php echo $user_check;?>);
+			let flag = true;
+			for (let i = 0; i < person["productos"].length; i++ ) {
+				if (person["productos"][i].actual < person["productos"][i].max)
+					flag = false;
+					
+			}
+			if (flag) {
+				window.location = "checkout.php";
+			} else {
+				alert("Recuerde que para redimir su pedido debe añadir todos los productos que se le han asignado");
+			} 
+			
+		}
+
+		function getPerson (cedula) {
+			for (let i = 0; i < names.length ; i++) {
+				if (sessionStorage.getItem(names[i]) != null) {
+					return JSON.parse(sessionStorage.getItem(names[i]));
+				}
+			}
+		}
+
+
 		
 	</script>
 
@@ -239,7 +265,7 @@
 				<div class="col-sm-12">
 					<div class="total_area">
 							<a class="btn btn-default update" href="product-details.php">Volver</a>
-							<a class="btn btn-default check_out" href="checkout.php">Confirmar</a>
+							<a class="btn btn-default check_out" href="javascript:checkout();">Confirmar</a>
 					</div>
 				</div>
 			</div>

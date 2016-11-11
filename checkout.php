@@ -36,8 +36,8 @@
 						<div class="shopper-info">
 							<p>Información del beneficiario</p>
 							<form action = "" method = "post">
-								<select name="city" >
-									<option>-- Ciudad --</option>
+								<select name="city" required>
+									<option value="">-- Ciudad --</option>
 									<option>Bogotá</option>
 									<option>Ibague</option>
 									<option>Monteria</option>
@@ -45,8 +45,8 @@
 									<option>Melgar</option>
 								</select>
 								<br></br>
-								<input type="text" name="address" placeholder="Dirección *">
-								<input type="text" name="phone_number" placeholder="Telefono">
+								<input type="text" name="address" placeholder="Dirección *" required>
+								<input type="text" name="phone_number" placeholder="Telefono" required>
 
 								<a class="btn btn-primary" href="cart.php">Volver</a>
 								<button type="submit" class="btn btn-primary">Confirmar</button>

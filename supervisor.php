@@ -25,6 +25,10 @@
 				$('#'+cedulas[i]).removeAttr( "hidden" );
 			}
 		}
+
+		function compra () {
+			alert("Este usuario no esta autorizado para hacer compras empresariales.");
+		}
 	</script>
 
 	<section id="cart_items">
@@ -202,7 +206,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="total_area">
-							<a class="btn btn-default check_out" href="#">Hacer compra empresarial</a>
+							<a class="btn btn-default check_out" href="javascript:compra();">Hacer compra empresarial</a>
 					</div>
 				</div>
 			</div>
