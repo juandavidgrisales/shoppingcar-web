@@ -33,16 +33,6 @@ include('header.php');
 		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Diseño Clasico y de Moda";
 	}
 
-	function changeDescription (folder) {
-		if (folder == "sastreformal2piezas") return sastreformal2piezasdesp;
-		if (folder == "blusaformalmangalarga") return blusaformalmangalargadesp;
-		if (folder == "vestidoformalhombre") return vestidoformalhombredesp;
-		if (folder == "camisaformalmangalarga") return camisaformalmangalargadesp;
-		if (folder == "corbatas") return "Jeffsito5";
-		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "";
-		if (folder == "disenoclasicomujer" || folder == "disenoclasicohombre" ) return "Jeffsito7";
-	}
-
 	function changeClothes (folder) {
 		$("#img1").attr("src","images/product-details/"+folder+"/grandes/View1.jpg");
 		$("#img2").attr("src","images/product-details/"+folder+"/grandes/View2.jpg");
@@ -285,7 +275,7 @@ include('header.php');
 
 								<h2 id="product-tittle">Sastre formal De Dos (2) Piezas</h2>
 
-								<p>Web ID: 1089772</p>
+								<p>Web ID: #1087329564</p>
 
 								<span>
 
