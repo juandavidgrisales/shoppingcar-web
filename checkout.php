@@ -36,18 +36,11 @@
 						<div class="shopper-info">
 							<p>Información del beneficiario</p>
 							<form action = "" method = "post">
-								<select name="city" required>
-									<option value="">-- Ciudad --</option>
-									<option>Bogotá</option>
-									<option>Ibague</option>
-									<option>Monteria</option>
-									<option>Valledupar</option>
-									<option>Melgar</option>
-								</select>
+								<input type="text" name="city" placeholder="Ciudad *" required>
 								<br></br>
 								<input type="text" name="address" placeholder="Dirección *" required>
-								<input type="text" name="phone_number" placeholder="Telefono" required>
-
+								<input type="text" name="phone_number" placeholder="Telefono *" required>
+								<p>* Campos obligatorios.</p>
 								<a class="btn btn-primary" href="cart.php">Volver</a>
 								<button type="submit" class="btn btn-primary">Confirmar</button>
 							</form>

@@ -15,23 +15,27 @@ include('header.php');
 	function initLoad (cedula) {
 		if (cedula == "38228444" || cedula == "38555333") {
 			changeClothes("sastreformal2piezas");
-			setTallas(true);
+			setTallas("mujer");
 		} else if (cedula == "38228555" || cedula == "38665333") {
 			changeClothes("disenoclasicomujer");
-			setTallas(false);
+			setTallas("zapato");
 		} else if (cedula == "14225334" || cedula == "93367444") {
 			changeClothes("vestidoformalhombre");
-			setTallas(true);
+			setTallas("hombre");
 		} else if (cedula == "14256834" || cedula == "95367342") {
 			changeClothes("disenoclasicohombre");
-			setTallas(false);
+			setTallas("zapato");
 		}
 	}
 
-	function setTallas (ropa) {
-		if (ropa) {
-			$("#tallas-ropa").removeAttr("hidden");
-		} else {
+	function setTallas (tipotalla) {
+		if (tipotalla == 'mujer') {
+			$("#tallas-ropa-mujer").removeAttr("hidden");
+		}
+		else if (tipotalla == 'hombre') {
+			$("#tallas-ropa-hombre").removeAttr("hidden");
+		} 
+		else if (tipotalla == 'zapato'){
 			$("#tallas-zapato").removeAttr("hidden");
 		}
 	}
@@ -103,6 +107,10 @@ include('header.php');
 			}
 		}
 	}
+
+	function elementAddCar () {
+			alert("Se ha agregado este producto al carrito.");
+		}
 </script>
 
 
@@ -297,7 +305,7 @@ include('header.php');
 
 									<input id="cant-prod" type="text" value="1" />
 
-									<button type="button" class="btn btn-fefault cart" onclick="addToCart(<?php echo $user_check;?>);">
+									<button type="button" class="btn btn-fefault cart" onclick="addToCart((<?php echo $user_check;?>),elementAddCar());">
 
 										<i class="fa fa-shopping-cart"></i>
 
@@ -311,7 +319,17 @@ include('header.php');
 								<p><b>Disponible:</b> En Stock</p>
 
 								<p><b>Talla</b></p>
-								<select id="tallas-ropa" class="col-sm-3" name="color" hidden>
+								<select id="tallas-ropa-mujer" class="col-sm-3" name="color" hidden>
+								    <option value="S">2XS</option>
+								    <option value="S">XS</option>
+								    <option value="S">S</option>
+								    <option value="M">M</option>
+								    <option value="L">L</option>
+								    <option value="XL">XL</option>
+								    <option value="2XL">2XL</option>
+								</select>
+
+								<select id="tallas-ropa-hombre" class="col-sm-3" name="color" hidden>
 								    <option value="S">XS</option>
 								    <option value="S">S</option>
 								    <option value="M">M</option>
