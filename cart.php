@@ -16,19 +16,19 @@
 			}
 		}
 
-		function quitar() {
+		function quitar(item) {
 			for (let i = 0; i < names.length ; i++) {
-				removeProduct(<?php echo $user_check;?>, names[i]);
+				removeProduct(<?php echo $user_check;?>, names[i], item);
 			}
 		}
 
-		function removeProduct(cedula, personName) {
+		function removeProduct(cedula, personName, item) {
 			if (sessionStorage.getItem(personName) != null) {
 				let person = JSON.parse(sessionStorage.getItem(personName));
 				console.log(person);
 				if(cedula==person["cedula"]){
 					for (let i = 0; i < person["productos"].length; i++ ) {
-						if (person["productos"][i].actual > 0) {
+						if (item == person["productos"][i].prenda && person["productos"][i].actual > 0) {
 							person["productos"][i].actual -= 1;
 							sessionStorage.setItem(personName, JSON.stringify(person));
 						}
@@ -136,7 +136,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Sastre formal De Dos (2) Piezas');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 
@@ -155,7 +155,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Blusa formal manga larga');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						<tr id="vestidoformalhombre" hidden>
@@ -173,7 +173,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Vestido formal de dos (2) piezas gama alta');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						<tr id="camisaformalmangalarga" hidden>
@@ -191,7 +191,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Camisa formal manga larga');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 
@@ -210,7 +210,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Corbata');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						<tr id="disenoclasicohombre" hidden>
@@ -228,7 +228,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Diseño Clasico y de Moda');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 						<tr id="disenoclasicomujer" hidden>
@@ -246,7 +246,7 @@
 								<a class="cart_quantity_update" href="product-details.php"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="javascript:quitar();"><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href="javascript:quitar('Diseño Clasico y de Moda');"><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
 					</tbody>

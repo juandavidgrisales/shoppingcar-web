@@ -60,6 +60,13 @@
 							</ul>
 						</div>
 					</div>
+					<div class="col-sm-6">
+						<div class="contactinfo pull-right">
+							<ul class="nav nav-pills">
+								<li><a><i class="fa fa-user"></i> <?php echo $login_session;?></a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div><!--/header_top-->
