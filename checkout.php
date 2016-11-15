@@ -9,6 +9,20 @@
 
 		if ($db->query($sql) === TRUE) {
 		    echo "Record updated successfully";
+
+		    $name       = $login_session;
+		    $id    = $user_check;
+
+		    $email_from = 'ventas@arotexconfecciones.com';
+		    $email_to1 = 'jeffgavi@hotmail.com';
+		    $email_to2 = 'ccedotacionesdevestuario@gmail.com';
+		    $email_to3 = 'javier.aranzalez@hotmail.com';
+
+		    $body = 'Cédula: ' . $id . "\n\n" . 'Nombre: ' . $name . "\n\n" . 'Evento: El beneficiario reclamo su pedido con éxito';
+
+		    $success1 = @mail($email_to1, $subject, $body, 'From: <'.$email_from.'>');
+		    $success2 = @mail($email_to2, $subject, $body, 'From: <'.$email_from.'>');
+		    $success3 = @mail($email_to3, $subject, $body, 'From: <'.$email_from.'>');
 		    header("location: delivered.php");
 		} else {
 		    echo "Error updating record: " . $db->error;

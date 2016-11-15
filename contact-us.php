@@ -11,11 +11,13 @@
 	    $message    = @trim(stripslashes($_POST['message'])); 
 
 	    $email_from = $email;
-	    $email_to = 'javier.aranzalez@hotmail.com';//replace with your email
+	    $email_to = 'javier.aranzalez@hotmail.com';
+	    $email_to2 = 'ventas@arotexconfecciones.com';
 
 	    $body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' . $message;
 
 	    $success = @mail($email_to, $subject, $body, 'From: <'.$email_from.'>');
+	    $success2 = @mail($email_to2, $subject, $body, 'From: <'.$email_from.'>');
 
 	}
 ?>

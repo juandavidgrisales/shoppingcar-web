@@ -44,23 +44,26 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Nombre</td>
-							<td class="description">Apellido</td>
 							<td class="quantity">Cedula</td>
+							<td class="image">Nombres</td>
+							<td class="description">Producto(s)</td>
 							<td>Redimido S/N</td>
 							<td>Despachado</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr id="38228444" hidden >
-							<td class="cart_product">
-								<h4>Camila</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">38'228.444</p>
+							</td>
+							<td class="cart_product">
+								<p>Camila Pataquiva</p>
+							</td>
+							<td class="cart_description">
+							<ul style="padding-left:0;">
+								<li>Sastre formal De Dos (2) Piezas x 1 Unidades</li>
+								<li>Blusa formal manga larga x 1 unidades</li>
+							</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -71,14 +74,18 @@
 						</tr>
 
 						<tr id="14225334" hidden >
-							<td class="cart_product">
-								<h4>Camilo</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">14'225.334</p>
+							</td>
+							<td class="cart_product">
+								<p>Camilo Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Vestido formal de dos (2) piezas gama alta</li>
+									<li>Camisa formal manga larga</li>
+									<li>Corbata</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -89,14 +96,17 @@
 						</tr>
 
 						<tr id="38555333" hidden >
-							<td class="cart_product">
-								<h4>Paulina</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">38'555.333</p>
+							</td>
+							<td class="cart_product">
+								<p>Paulina Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Sastre formal De Dos (2) Piezas x 1 Unidades</li>
+									<li>Blusa formal manga larga x 1 unidades</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -107,14 +117,18 @@
 						</tr>
 
 						<tr id="93367444" hidden >
-							<td class="cart_product">
-								<h4>Pablo</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">93'367.444</p>
+							</td>
+							<td class="cart_product">
+								<p>Pablo Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Vestido formal de dos (2) piezas gama alta</li>
+									<li>Camisa formal manga larga</li>
+									<li>Corbata</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -125,14 +139,16 @@
 						</tr>
 
 						<tr id="38228555" hidden >
-							<td class="cart_product">
-								<h4>Andrea</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">38'228.555</p>
+							</td>
+							<td class="cart_product">
+								<p>Andrea Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Diseño Clasico y de Moda</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -143,14 +159,16 @@
 						</tr>
 
 						<tr id="14256834" hidden >
-							<td class="cart_product">
-								<h4>Orlando</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">14'256.834</p>
+							</td>
+							<td class="cart_product">
+								<p>Orlando Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Diseño Clasico y de Moda</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -161,14 +179,16 @@
 						</tr>
 
 						<tr id="38665333" hidden >
-							<td class="cart_product">
-								<h4>Laura</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">38'665.333</p>
+							</td>
+							<td class="cart_product">
+								<p>Laura Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Diseño Clasico y de Moda</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
@@ -179,14 +199,16 @@
 						</tr>
 
 						<tr id="95367342" hidden >
-							<td class="cart_product">
-								<h4>Alex</h4>
-							</td>
-							<td class="cart_description">
-								<h4>Pataquiva</h4>
-							</td>
 							<td class="cart_total">
 								<p class="cart_total_price">95'367.342</p>
+							</td>
+							<td class="cart_product">
+								<p>Alex Pataquiva</p>
+							</td>
+							<td class="cart_description">
+								<ul style="padding-left:0;">
+									<li>Diseño Clasico y de Moda</li>
+								</ul>
 							</td>
 							<td class="cart_update">
 								<p>SI</p>
