@@ -2,6 +2,11 @@
 	include('session.php');
 	include('header.php');
 
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		$sql1 = "UPDATE shopping_user SET payoff='1' WHERE payoff='0' and Role_id = '2'";
+		$result1 = mysqli_query($db,$sql1);
+	}
+
 	$sql = "SELECT identification_number FROM shopping_user WHERE Role_id = '2' and payoff = '1'";
 	$result = mysqli_query($db,$sql);
 
@@ -228,7 +233,9 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="total_area">
-							<a class="btn btn-default check_out" href="javascript:compra();">Hacer compra empresarial</a>
+						<form action = "" method = "post">
+							<button type="submit" class="btn btn-default">Hacer compra empresarial</button>
+						</form>
 					</div>
 				</div>
 			</div>
